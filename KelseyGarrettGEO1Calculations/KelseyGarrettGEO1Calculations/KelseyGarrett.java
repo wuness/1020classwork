@@ -17,9 +17,6 @@ public static double guided = .20;
 public static double quiz = .25;
 public static double iteration = .25;
 public static double ftest = .20;
-//
-
-
 // grade weight constants
 	
 	public static void main(String[] args) 	
@@ -36,17 +33,34 @@ public static double ftest = .20;
 		double guided2 = ((double)(70*guided));
 		double iteration2 = ((double)(85*iteration));
 		double ftest2 = ((double)(60*ftest));
+		int finalg = ((participation2)+(quiz2)+(guided2)+(iteration2)+(ftest2))
 		// individual weighted final grades
+				
 		System.out.println("Final Grade:");
-		System.out.println(((int)((participation2)+(quiz2)+(guided2)+(iteration2)+(ftest2))));
-		// final grade
+		System.out.println((finalg)"%");
+		// final grade actual
 		
-	//main
-	//GEO1
+	if (finalg >= 70 && finalg <= 79) {
+		System.out.println("Letter grade: C");
+		
+	} else if (finalg >= 80 &&  finalg <= 89) {
+		System.out.println("Letter grade: B")
+	}
+	else if (finalg >= 90 && finalg <= 100)	  {
+		System.out.println("Letter grade: A")
+	}
+	else if (finalg >= 60 && finalg <= 69)	{
+		System.out.println("Letter Grade: D")
+	}
+	else if (finalg <= 59) {
+		System.out.println("Letter Grade: F")
+		// final grade letter
+	}
 	}
 }
 		
-		
+		// MAIN
+		// GEO01
 		
 		
 		
