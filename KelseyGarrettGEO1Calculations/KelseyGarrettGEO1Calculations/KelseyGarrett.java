@@ -38,7 +38,7 @@ public static double ftest = .20;
 		double ftest2 = ((double)(60*ftest));
 		// individual weighted final grades
 		System.out.println("Final Grade:");
-		System.out.println((participation2)+(quiz2)+(guided2)+(iteration2)+(ftest2));
+		System.out.println(((int)((participation2)+(quiz2)+(guided2)+(iteration2)+(ftest2))));
 		// final grade
 		
 	//main
