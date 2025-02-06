@@ -2,7 +2,7 @@
  * Calculate the BMI using formula in US units
  * Use will enter weight in pounds and height in inches
  */
-
+import java.util.Scanner;
 // ADD CODE to import Scanner class 
 
 public class BodyMassIndex
