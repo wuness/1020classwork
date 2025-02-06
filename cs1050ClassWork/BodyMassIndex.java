@@ -12,8 +12,8 @@ public class BodyMassIndex
 		//constants
 		final int BMI_US_FACTOR = 703; //factor formula in pounds
 		// Variables
-		final double weight = 0; // The user's weight
-		double height = 0; // The user's height
+		double weight; // The user's weight
+		double height; // The user's height
 		double bmi; // The user's BMI
 
 		// Create a Scanner object for scanning  input from keyboard 
