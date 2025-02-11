@@ -32,16 +32,22 @@ public class publicMO2LO6MathChars {
 		System.out.println("enter a char");
 		Scanner input = new Scanner(System.in);
 		char someChar = input.next().charAt(0);
-		System.out.println("A char has been entered in a Ascii value" + someChar);
+		System.out.println("A char has been entered in a Ascii value " + someChar);
 		
-		String myName = "Garrett";
+		//String myName = "Garrett";
 		// string use second capital due to it not being primitive data type
 		
-		String studentName = "Silly Willy";
-		String studentName1 = new String ("Willy Nilly");
+		//String studentName = "Silly Willy";
+		//String studentName1 = new String ("Willy Nilly");
+		//String firstName = "Willy";
+		
 		String firstName = "Willy";
+		String lastName = "Nilly";
+		String middleName = "N";
+		String fullName = (firstName + middleName + lastName);
+		String lowerCaseFullName = firstName.toLowerCase();
 		
-		
+		System.out.println(lowerCaseFullName);
 		
 	}
 
