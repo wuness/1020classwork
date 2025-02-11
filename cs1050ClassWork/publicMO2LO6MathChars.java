@@ -49,6 +49,10 @@ public class publicMO2LO6MathChars {
 		
 		System.out.println(lowerCaseFullName);
 		
+		int lengthOfString = firstName.length();
+		System.out.println(lengthOfString);
+		System.out.println("the third letter of your name is: " + fullName.charAt(0));
+		
 	}
 
 }
