@@ -39,7 +39,23 @@ public class LastnameGE02StringsChars {
 		System.out.println(studentName1);
 	
 	
+	switch (WeekDay) {
+
+	case 7 {
+		System.out.println("Today is Sunday")
+	break;
+	}
+	case 6 {
+		System.out.println("Today is Saturday");
+	break;
+	}
+	default {
+		System.out.println("Today is not the weekend.")
+	break;
+	}
+	}
 	
+	// Switch day of week
 
 	}
 
