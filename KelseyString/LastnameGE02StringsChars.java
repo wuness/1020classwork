@@ -41,11 +41,11 @@ public class LastnameGE02StringsChars {
 	
 	switch (WeekDay) {
 
-	case 7 {
+	case 1 {
 		System.out.println("Today is Sunday")
 	break;
 	}
-	case 6 {
+	case 2 {
 		System.out.println("Today is Saturday");
 	break;
 	}
@@ -53,7 +53,16 @@ public class LastnameGE02StringsChars {
 		System.out.println("Today is not the weekend.")
 	break;
 	}
+
+	// Switch day of week
 	}
+	
+	String weekEndSat = "Saturday";
+	String weekEndSun = "Sunday";		
+	
+	if (weekEndSat || weekEndSun)
+		System.out.println("It's the weekend");
+	
 	
 	// Switch day of week
 
