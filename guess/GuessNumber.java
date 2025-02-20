@@ -40,3 +40,4 @@ public class GuessNumber {
 	}
 
 }
+		// End of code enclosed in main method
