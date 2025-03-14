@@ -1,4 +1,4 @@
-package KelseyGarrettGEO1Calculations;
+package KelseyGarrettGEO1Calculationsupdated;
 
 import java.util.Scanner;
 // where to pull from
