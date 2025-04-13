@@ -32,10 +32,10 @@ public class TopAthlete {
 		int maxV = athlete[0];
 		int index = 0;
 		for (int runs = 0; runs < athlete.length; runs++)
-		if (athlete[runs] > athlete[0])
+		if (athlete[runs] > maxV) {
 			maxV = athlete[runs];
-		index = runs;
-			System.out.println("Max Value " + maxV + "Index: " + index);
+			index = runs; }
+	System.out.println("Max Value " + maxV + "Index: " + index);
 	return athlete[0];
 }
 	
