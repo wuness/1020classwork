@@ -18,8 +18,18 @@ public class FileWriteMer {
 		File example = new File ("templateFile");
 		Scanner scanFile = new Scanner(example);
 		scanFile.close();
-		
+		int[][] twoArray = new int [5][10];
 		
 	}
+
+}
+
+
+public static void arrayInitial (String[] twoArray[][]) {
+	for (int set1 = 0; set1 < twoArray.length; set1++); {
+		
+	}
+	for (int set2 = 0; set2 < twoArray.length; set2++);
+	
 
 }

@@ -1,60 +1,104 @@
-
+import java.util.Scanner;
 public class TopAthlete {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
 		
-		int[] athlete = {100,200,300,400,500};
+	Scanner valuein = new Scanner(System.in);
+	
+	System.out.println("Enter number of athletes:");
+	int athleteQuant = positiveInt();
+	int[] athletes = new int [athleteQuant];
+	Athlete[] athlete = new Athlete[athleteQuant];
+	
+	for (int runs = 0; runs < athletes.length; runs ++) {
 		
-		printContents(athlete);
-		
-		maxValue(athlete);
-		
-		minValue(athlete);
-		
-		total(athlete);
+	System.out.println("Enter weight for athlete " + runs);
+	double weight = positiveDouble();
+	
+	System.out.println("Enter height for athlete " + runs);
+	double height = positiveDouble();
+	
+	System.out.println("Enter age for athlete " + runs);
+	int age = positiveInt();
+	
+	System.out.println("Enter calories for athlete " + runs);
+	int calories = positiveInt();
+	
+	athlete[runs] = new Athlete (weight, height, age, calories);
+	
+	}
 	}
 
 
-	public static int printContents (int[] athlete) {
+	public static int positiveInt () {
+	
+	Scanner valuein = new Scanner(System.in);
+	int value = 0;
+	
+	do {
+	
+	if (!valuein.hasNextInt()) {
+	System.out.println("Invalid entry, enter a whole number");
+	valuein.nextInt(); }
+	value = valuein.nextInt();
+		if (value < 0) {
+			System.out.println("Invalid entry, enter a positive number"); }
+	}
+	while (value < 0); 
+	System.out.println("Entry accepted");
+	
+	return value;
+	
+	}
+	
+	public static double positiveDouble () {
 		
-		for (int runs = 0; runs < athlete.length; runs++)
-		System.out.println(athlete[runs]);
-	
-	return athlete[0];
-	
+		Scanner valuein = new Scanner(System.in);
+		double value = 0;
+		
+		do {
+		
+		if (!valuein.hasNextDouble()) {
+		System.out.println("Invalid entry, enter a whole number");
+		valuein.nextDouble(); }
+		value = valuein.nextDouble();
+			if (value < 0) {
+				System.out.println("Invalid entry, enter a positive number"); }
+		}
+		while (value < 0); 
+		System.out.println("Entry accepted");
+		
+		return value;
+		
+		}
+	public static int getMaxHeart (int athletes) {
+		for (int runs = 0; runs < athletes.length; runs++);
+		
 	}
 	
-	public static int maxValue (int[] athlete) {
-		int maxV = athlete[0];
-		int index = 0;
-		for (int runs = 0; runs < athlete.length; runs++)
-		if (athlete[runs] > maxV) {
-			maxV = athlete[runs];
-			index = runs; }
-	System.out.println("Max Value " + maxV + "Index: " + index);
-	return athlete[0];
 }
+
+class Athlete {
+public Athlete(double weight, double height, int age, double calories) {
 	
-	public static int minValue (int[] athlete) {
-		int minV = athlete[0];
-		for (int runs = 0; runs < athlete.length; runs++)
-		if (athlete[runs] < athlete[0])
-			minV = athlete[runs];
-			System.out.println("Min Value " + minV);
-	return athlete[0];
+weight = 0;
+height = 0;
+age = 0;
+calories = 0;
+
 }
+
+}
+
+
+
 	
-	public static int total (int[] athlete) {
-	int sum = 0;
-	for (int runs = 0; runs < athlete.length; runs++)
-	sum += athlete[runs];
-	System.out.println("Sum of values: " + sum);
-	return athlete[0];
-	}
-}
- 
+
+
+	
+	
+
 	
