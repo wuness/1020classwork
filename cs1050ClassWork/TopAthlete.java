@@ -15,21 +15,26 @@ public class TopAthlete {
 	
 	for (int runs = 0; runs < athletes.length; runs ++) {
 		
-	System.out.println("Enter weight for athlete " + runs);
+	System.out.println("Enter weight for athlete " + (runs + 1) + " (in lbs)");
 	double weight = positiveDouble();
 	
-	System.out.println("Enter height for athlete " + runs);
+	System.out.println("Enter height for athlete " + (runs + 1) + "(in inches)");
 	double height = positiveDouble();
 	
-	System.out.println("Enter age for athlete " + runs);
+	System.out.println("Enter age for athlete " + (runs + 1) + "");
 	int age = positiveInt();
 	
-	System.out.println("Enter calories for athlete " + runs);
+	System.out.println("Enter calories for athlete " + (runs + 1) + "");
 	int calories = positiveInt();
 	
-	athlete[runs] = new Athlete (weight, height, age, calories);
-	
+	athlete[runs] = new Athlete (weight, height, age);
 	}
+	
+	for (int athl = 0; athl < athletes.length; athl++) {
+	athlete[athl].athleteSummary(athl);
+	}
+	
+	
 	}
 
 
@@ -74,24 +79,58 @@ public class TopAthlete {
 		return value;
 		
 		}
-	public static int getMaxHeart (int athletes) {
-		for (int runs = 0; runs < athletes.length; runs++);
+	public static int getMaxHeart (int age) {
+		int heartRate = 220-age;
+		System.out.println("The max heart rate is: " + heartRate);
+		return heartRate;
 		
 	}
+		public static double getBMI (double height, double weight){
+		
+		double BMI = 730*(weight/Math.pow(height, 2));
+		double roundBMI = Math.round(BMI*Math.pow(10,2))/Math.pow(10,2);
+		if (roundBMI < 18.5) {
+			System.out.println("Athlete is underweight with a BMI of " + roundBMI);
+		}
+		else if (roundBMI < 25) {
+			System.out.println("Athlete is a normal weight with a BMI of " + roundBMI);
+		}
+		else if (roundBMI < 30) {
+		System.out.println("Athlete is overweight with a BMI of " + roundBMI);
+		} else {
+			System.out.println("Athlete is obese with a BMI of " + roundBMI);
+		}
+		
+	return BMI;
+}
+
+
+public static class Athlete {
 	
-}
+private double weight;
+private double height;
+private int age;
+private double[] calories;
 
-class Athlete {
-public Athlete(double weight, double height, int age, double calories) {
+public Athlete(double weight, double height, int age) {
 	
-weight = 0;
-height = 0;
-age = 0;
-calories = 0;
-
+this.weight = weight;
+this.height = height;
+this.age = age;
+double[] calories = new double [7];
 }
 
+public void athleteSummary(int athlete) {
+System.out.println("Summary of Athlete " + athlete);
+double BMI = getBMI(height, weight);
+int maxHeart = getMaxHeart(age);
 }
+
+
+}
+}
+
+
 
 
 
