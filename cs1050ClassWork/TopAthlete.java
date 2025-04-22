@@ -24,18 +24,23 @@ public class TopAthlete {
 	System.out.println("Enter age for athlete " + (runs + 1) + "");
 	int age = positiveInt();
 	
-	System.out.println("Enter calories for athlete " + (runs + 1) + "");
-	int calories = positiveInt();
-	
 	athlete[runs] = new Athlete (weight, height, age);
+	
+	System.out.println("Enter calories burned for everyday of the week");
+	for (int day = 0; day < 7; day++ ) {
+		double calBurn = positiveDouble();
+		athlete[runs].inCal (day, calBurn);
+		
+	}
 	}
 	
 	for (int athl = 0; athl < athletes.length; athl++) {
 	athlete[athl].athleteSummary(athl);
 	}
-	
-	
 	}
+	
+	
+	
 
 
 	public static int positiveInt () {
@@ -88,7 +93,7 @@ public class TopAthlete {
 		public static double getBMI (double height, double weight){
 		
 		double BMI = 730*(weight/Math.pow(height, 2));
-		double roundBMI = Math.round(BMI*Math.pow(10,2))/Math.pow(10,2);
+		double roundBMI = Math.round(BMI*Math.pow(10,1))/Math.pow(10,1);
 		if (roundBMI < 18.5) {
 			System.out.println("Athlete is underweight with a BMI of " + roundBMI);
 		}
@@ -114,21 +119,39 @@ private double[] calories;
 
 public Athlete(double weight, double height, int age) {
 	
-this.weight = weight;
-this.height = height;
-this.age = age;
-double[] calories = new double [7];
-}
-
-public void athleteSummary(int athlete) {
-System.out.println("Summary of Athlete " + athlete);
-double BMI = getBMI(height, weight);
-int maxHeart = getMaxHeart(age);
-}
-
 
 }
+	public void inCal (int day, double calBurn) {
+	if (day >= 0 && day <=7) {
+	this.calories[day]=calBurn;
+	}
+	}
+	public double avgCal () {
+		double sum = 0;
+		double avg = 0;
+		for (int runs = 0; runs < calories.length; runs++) {
+		}
+		avg = sum/calories.length;
+		double avground = Math.round(avg*Math.pow(10,2))/Math.pow(10,2);
+		System.out.println("Athlete's average calories burned: " + avground);
+		return avground;
+		
+		
+	}
+	
+	public void athleteSummary(int athlete) {
+		System.out.println("Summary of Athlete " + (athlete + 1));
+		double BMI = getBMI(height, weight);
+		int maxHeart = getMaxHeart(age);
+		double avgCalories = avgCal();
+		}
 }
+}
+
+
+
+
+
 
 
 
