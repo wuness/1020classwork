@@ -9,7 +9,7 @@ public class Athlete2 {
 		// TODO Auto-generated method stub
 	Scanner valuein = new Scanner(System.in);
 	System.out.println("Enter number of athletes:");
-	int athleteQuant = positiveInt();
+	int athleteQuant = positiveInput(valuein.nextInt());
 	
 	// Initializing input for users to input information
 	
@@ -31,21 +31,24 @@ public class Athlete2 {
 		// Input first and last name
 
 		System.out.println("Enter weight for athlete " + (runs + 1) + " (in lbs)");
-		double weight = positiveDouble();
+		double weight = positiveInput(valuein.nextDouble());
 
 		System.out.println("Enter height for athlete " + (runs + 1) + "(in inches)");
-		double height = positiveDouble();
+		double height = positiveInput(valuein.nextDouble());
 
 		System.out.println("Enter age for athlete " + (runs + 1) + "");
-		int age = positiveInt();
+		int age = positiveInput(valuein.nextInt());
 		
 		// Enter age, height, and weight
 		
+	
+		
 		athletes[runs] = new Athlete( firstName, lastName, weight, height, age);
+		athletes[runs].setAge();
 
 		System.out.println("Enter calories burned for everyday of the week");
 		for (int day = 0; day < 7; day++) {
-			double calBurn = positiveDouble();
+			double calBurn = positiveInput(valuein.nextDouble());
 			athletes[runs].inCal(day, calBurn);
 
 		}
@@ -67,7 +70,7 @@ public class Athlete2 {
 
 
 	
-	public static int positiveInt () {
+	public static int positiveInput (int validinput) {
 		
 		Scanner valuein = new Scanner(System.in);
 		int value = 0;
@@ -90,7 +93,7 @@ public class Athlete2 {
 	
 	// Verifies positive int
 	
-	public static double positiveDouble () {
+	public static double positiveInput (double validinput) {
 		
 		Scanner valuein = new Scanner(System.in);
 		double value = 0;
@@ -180,6 +183,14 @@ private String lastName;
 		
 		return BMI;
 	}
+	
+	public void setAge () {
+	if (age > 0)
+		this.age = age;
+		else {
+			System.out.println("Invalid age value");
+		}
+	}
 
 // Method to calculate BMI
 
@@ -258,7 +269,7 @@ private Athlete[] athletes;
 		   output.println("Summary of Athlete " + (runs + 1));
 		   output.println("Name: " + athletes[runs].getFirstName() + " " + athletes[runs].getLastName());
 		   output.println("BMI: " + athletes[runs].getBMI());
-		   output.println("Max Heart Rate: " + athletes[runs].getMaxHeart((athletes[runs]).getAge()));
+		   output.println("Max Heart Rate: " + athletes[runs].getMaxHeart((athletes[runs]).getAge(age)));
 		   output.println("Average Calories: " + athletes[runs].avgCal());
 		    }
 		 }
@@ -301,7 +312,7 @@ private Athlete[] athletes;
 		 int [] calories = new int [7];
 		 for (int runs = 0; runs < calories.length; runs++) {
 			 calories[runs] = file.nextInt();
-			gym.addAthletes(new Athlete( firstName, lastName, weight, height, age));
+			Gym.addAthletes(new Athlete(firstName, lastName, weight, height, age));
 		 }
 	 }
 		file.close();
